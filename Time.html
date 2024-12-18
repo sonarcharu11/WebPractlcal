@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-between;
+            background-color: red;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 10px;
+            padding:20px;
+            font-size: 25px;
+            font-weight: bold;
+
+        }
+    </style>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function Clock() {
+            var time = new Date();
+            document.getElementById("time").innerHTML = time.toLocaleTimeString();
+        }
+
+        function bodyLoad() {
+            setInterval(Clock, 1000);
+            var icon=document.getElementById("icon");
+            var msg=document.getElementById("msg");
+            var time = new Date();
+            var hour = time.getHours();
+            
+            if(hour>=0 &&hour<12){
+                msg.innerHTML="Good Morning";
+                icon.className="bi bi-brightness-alt-high";
+            }else if(hour>=12 && hour<17){
+                msg.innerHTML="Good Afternoon";
+                icon.className="bi bi-brightness-high";
+            }else if(hour>=17 && hour<21){
+                msg.innerHTML="Good Evening";
+                icon.className="bi cloud-sun-fill";
+            }else{
+                msg.innerHTML="Good Night";
+                icon.className="bi bi-moon-stars-fill";
+            }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <div class="container">
+        <span>Amezon shopping</span>
+        <span>
+            <span id="icon"></span> 
+            <span id="msg"></span>
+        </span>
+        <span id="time"></span>
+    </div>
+</body>
+</html>

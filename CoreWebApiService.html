@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("https://localhost:44324/api/Customer")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to fetch customers");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const tableBody = document.getElementById("CustomerTableBody");
+                    data.forEach(customer => {
+                        const tr = document.createElement("tr");
+
+                        const tdId = document.createElement("td");
+                        tdId.textContent = customer.CustId;
+
+                        const tdName = document.createElement("td");
+                        tdName.textContent = customer.Name;
+
+                        const tdBalance = document.createElement("td");
+                        tdBalance.textContent = customer.Balance;
+
+                        const tdCity = document.createElement("td");
+                        tdCity.textContent = customer.City;
+
+                        const tdStatus = document.createElement("td");
+                        tdStatus.textContent = customer.Status ? "Active" : "Inactive";
+                        tr.appendChild(tdId);
+                        tr.appendChild(tdName);
+                        tr.appendChild(tdBalance);
+                        tr.appendChild(tdCity);
+                        tr.appendChild(tdStatus);
+
+                        tableBody.appendChild(tr);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching customer data:", error);
+                });
+        });
+    </script>
+</head>
+<body>
+    <h1>Customer List</h1>
+    <table class="table table-bordered table-hover table-striped table-primary text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>City</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="CustomerTableBody">
+        </tbody>
+    </table>
+</body>
+</html>

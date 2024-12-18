@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+        var products=[
+            {Name:"boAt Neckband",price:5300,Photo:"../public/images/neckband.jpg"},
+            {Name:"laptop",price:65800,Photo:"../public/images/laptop.jpg"},
+            {Name:"Mobile",price:23600,Photo:"../public/images/iphon15.jpg"},
+            {Name:"freez",price:20600,Photo:"../public/images/freez.jpg"},
+
+        ];
+        function bodyLoad(){
+            for(var product of products)
+            {
+                var tr= document.createElement("tr");
+                var tdName= document.createElement("td");
+                var tdPrice= document.createElement("td");
+                var tdPhoto= document.createElement("td");
+
+                tdName.innerHTML=product.Name;
+                tdPrice.innerHTML=product.price;
+
+                var img=document.createElement("img");
+                img.src=product.Photo;
+                img.width="150";
+                img.height="150";
+
+                tdPhoto.appendChild(img);
+                tr.appendChild(tdName);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdPhoto);
+
+                document.querySelector("tbody").appendChild(tr);
+
+            }
+        }
+
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <table border="1" width="800">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Preview</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    
+</body>
+</html>

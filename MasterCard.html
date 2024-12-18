@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function verifyCard(){
+            var cardNumber = document.getElementById("txtcard").value;
+            var cardImg = document.getElementById("cardImg");
+
+            // Corrected: Using .startsWith() and verifying card number prefix
+            if(cardNumber.startsWith("4444")){
+                cardImg.src = "../Public/images/MasterCard_Logo.png";
+            } else if(cardNumber.startsWith("5555")){
+                cardImg.src = "../Public/images/visa-logo.png";
+            } else {
+                cardImg.src = "";
+                cardImg.alt = "N/A";
+            }
+        }
+        function verifyEmail(){
+            var email=document.getElementById("txtEmail").value;
+            if(email.endsWith("gmail.com")){
+                document.getElementById("msg").innerHTML="Email Verifyed";
+
+            }else{
+                document.getElementById("msg").innerHTML="Invalide Email";
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Your Card Number</legend>
+        <h3>Card Number</h3>
+        <div class="input-group">
+            <!-- Corrected: Changed 'if' to 'id' for proper identification -->
+          
+            <input type="text" id="txtcard" onkeyup="verifyCard()" class="form-control" placeholder="Enter your card number">
+            <img class="input-group-text img-fluid" id="cardImg" width="100" height="50" alt="">
+        </div>
+        <h3>Your Gmail</h3>
+        <div>
+            <input type="text" onkeyup="verifyEmail()" id="txtEmail" class="form-control">
+            <div id="msg">
+            </div>
+        </div>
+        
+    </fieldset>
+</body>
+</html>

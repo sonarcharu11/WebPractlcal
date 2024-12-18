@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsonDemo</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"> 
+    <script>
+         var products=[
+            {Name:"boAt Neckband",price:5300,Photo:"../public/images/neckband.jpg"},
+            {Name:"laptop",price:65800,Photo:"../public/images/laptop.jpg"},
+            {Name:"Mobile",price:23600,Photo:"../public/images/iphon15.jpg"},
+            {Name:"freez",price:20600,Photo:"../public/images/freez.jpg"},
+
+        ];
+        function bodyLoad(){
+            for(var product of products)
+            {
+                var card=document.createElement("div");
+                card.className="card w-25 m-2 p-2";
+                
+                card.innerHTML = `
+                    <img src="${product.Photo}" height="200" class="card-img-top">
+                    <div class="card-header">
+                        <h2>${product.Name}</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>&#8377; ${product.price}</p>
+                    </div> 
+                    <div class="card-footer">
+                        <button class="btn btn-danger w-100">
+                            <span class="bi bi-cart4">Add to Cart</span>
+                        </button>
+                    </div>
+                `;
+                    document.getElementById("catalog").appendChild(card);
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyLoad()">
+    <div id="catalog" class="d-flex flex-wrap justify-content-between m-3">
+
+    </div>
+   
+</body>
+</html>

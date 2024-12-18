@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiLavel Iteration</title>
+    <script>
+         var data=[
+        {category:"Electronics",Products:["Tv","Mobile"]},
+        {category:"Footwear",Products:["Nike Casual","Lee Boot"]}
+    ];
+//First Method
+    // function bodyLoad(){
+    //     for (var item of data){
+    //         var li=document.createElement("li");
+    //         li.innerHTML=item.category;
+    //         for(var product of item.Products)
+    //         {
+    //             var ul=document.createElement("ul");
+    //             var innerli=document.createElement("li");
+    //             innerli.innerHTML=product;
+    //             ul.appendChild(innerli);
+    //             li.appendChild(ul);
+    //             document.querySelector("ol").appendChild(li);
+
+    //         }
+    //     }
+    // }
+
+//Second Methos
+
+    function bodyLoad(){
+        for(var item of data){
+            var outerli=document.createElement("li");
+            outerli.innerHTML=item.category;
+            for(var product of item.Products){
+                var ul=document.createElement("ul");
+                var innerli=document.createElement("li");
+                innerli.innerHTML=product;
+                ul.appendChild(innerli);
+                outerli.appendChild(ul);
+                document.querySelector("ol").appendChild(outerli);
+            }
+        }
+    }
+    </script>
+</head>
+<body onload="bodyLoad()">
+   <ol>
+
+   </ol>
+</body>
+</html>

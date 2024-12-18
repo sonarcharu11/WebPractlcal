@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amezon Login</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    
+
+        <script>
+            var userDeatils={
+                Email:"Charu@gmail.com",
+                Mobile:"7741824283",
+                password:"Charu@123"
+            }
+            function ContininueClick(){
+                var userId=document.getElementById("txtuser").value;
+                if(userId==userDeatils.Email){
+                    document.write(`Login Success with your Email${userId}`); 
+                    document.getElementById("password").style.display="block";     
+                }else if(userId==userDeatils.Mobile){
+                    document.write(`Login Success with your Mobile Number${userId}`); 
+                    document.getElementById("password").style.display="block";     
+                }else{
+                    document.getElementById("UserError").innerHTML="Please enter valid Email or passwors";
+                }
+            }
+        </script>
+
+
+</head>
+
+<body class="container-fluid">
+    <div class="d-flex justify-content-center align-text-center mt-5" style="height: 400">
+        <div>
+            <h2> Signin</h2>
+            <div id="userid">
+                <label class="form-label"> sign with SingEmail Or Mobile</label>
+                <div>
+                    <input type="text" id="txtuser" class="form-control">
+                    <div class="text-danger" id="UserError"></div>
+                </div>           
+                <div class="mt-2">
+                    <div>
+                        <button class=" btn btn-warning" onclick="ContininueClick()">Contininue</button>
+                    </div>
+                </div>
+            </div>
+            <div id="password" style="display: none;">
+                <label class="form-label"> password</label>
+                <div>
+                    <input type="password" id="txtpwd" class="form-control">
+                </div>
+
+                <div class="mt-2">
+                    <div>
+                        <button class="btn btn-warning">Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

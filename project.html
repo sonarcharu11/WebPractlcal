@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module System</title>
+      <!-- Note: type="module" is required here -->
+      
+      <script type="module">
+        import Title,{detils } from '../public/library/ProductModule.js';
+        document.querySelector("h1").innerHTML = Title();
+        document.querySelector("p").innerHTML=`Name: ${detils().Name}<br>Price: ${detils.price}`;
+    </script>
+</head>
+<body>
+    <h1 align="center"></h1>
+    <p></p>
+</body>
+</html>

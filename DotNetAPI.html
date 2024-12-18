@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        async function fetchProducts() {
+            try {
+                const response = await fetch("http://localhost:5037/api/Products");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const products = await response.json();
+
+                if (products && products.length > 0) {
+                    const tableBody = document.getElementById("productTableBody");
+
+                    products.forEach(product => {
+                        const tr = document.createElement("tr");
+
+                        const tdId = document.createElement("td");
+                        tdId.textContent = product.id;
+
+                        const tdName = document.createElement("td");
+                        tdName.textContent = product.name;
+
+                        const tdPrice = document.createElement("td");
+                        tdPrice.textContent = product.price;
+
+                        tr.appendChild(tdId);
+                        tr.appendChild(tdName);
+                        tr.appendChild(tdPrice);
+
+                        tableBody.appendChild(tr);
+                    });
+                } else {
+                    const tableBody = document.getElementById("productTableBody");
+                    const tr = document.createElement("tr");
+                    const td = document.createElement("td");
+                    td.textContent = "No records found.";
+                    td.colSpan = 3;
+                    tr.appendChild(td);
+                    tableBody.appendChild(tr);
+                }
+            } catch (error) {
+                console.error("Error fetching products:", error);
+                const tableBody = document.getElementById("productTableBody");
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.textContent = "Error fetching data.";
+                td.colSpan = 3;
+                tr.appendChild(td);
+                tableBody.appendChild(tr);
+            }
+        }
+
+        window.onload = fetchProducts;
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Product List</h1>
+    <table class="table-hover table-danger">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody">
+            <!-- Rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+</body>
+</html>

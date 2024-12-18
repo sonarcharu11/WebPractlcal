@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var Category=["Select Category","Electronics","footwear","fashion"]
+        function bodyLoad(){
+            for(var item of Category){
+                var option=document.CreateElement("option");
+                option.value=item;
+                option.text=item;
+                document.getElementById("CategoryList").appendChild(option);
+            }
+        }
+    </script>
+</head>
+<body >
+    <header class="bg-danger text-center text-white p-2">
+        <h1> <span class="bi bi-cart3"></span> Amezon Shopping</h1>
+    </header>
+    <div class="row mt-2">
+        <div class="col-3">
+            <div class="mt2">
+                <label class="form-label">select Category</label>
+                <div>
+                    <select  class="form-select" id="CategoryList">
+
+                    </select>
+                </div>
+            </div>
+            <div class="mt-2">
+                <label class="form-label">select Product</label>
+                <select  class="form-select" id="ProductList">
+
+                </select>
+            </div>
+            <div class="mt-2">
+                <label class="form-label">Preview</label>
+                <div class="card-header text-center">
+                    <h2 id="lblName"></h2>
+                </div>
+                <div class="card-body text-center">
+                    <img height="200" width="200" id="productimg">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger w-100"><span class=" bi bi-cart4">Add To Cart</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-7">
+        </div>
+        <div class="col-2">
+            <div class="mt-2">                
+                    <button class="btn btn-warning w-100">
+                    <span class="bi bi-cart2"></span>
+                    [<label id="lblCart"></label>]
+                    Your Cart Item
+                </button>            
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid"></div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

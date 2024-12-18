@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function bodyload(){
+        // for dom
+            // window.document.images[0].src="../Public/images/ac.jpg";            
+            // window.document.forms[0].elements[1].value="Ragistation";
+            // window.document.forms[1].elements[1].value="Login";
+        //For usig "Name":
+            // pic.src="../Public/images/ac.jpg";
+            // frmRagister.btnRegister.value="Ragister";
+            // fomLogin.btnLogin.value="Login";
+
+        //For ID:
+            // document.getElementById("pic").src="../Public/images/ac.jpg"
+            // document.getElementById("btnRegister").value="Register"
+            // document.getElementById("btnLogin").value="Login";
+
+        //for QuerySelector
+            document.querySelector("#pic").src="../Public/images/ac.jpg";
+            document.querySelector(".btn-rg").value="Register"; 
+            document.querySelector(".btn-lg").value="Login";
+
+        // For 
+         result=document.getElementByName("pay")
+            alert("Tottal Number of Payment Method:"+result.lenght);
+
+         }
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <!-- <div>
+       
+        <img id="pic" name="pic" height="200px" width="200px" />
+    </div>
+    <div>
+        <form name="frmRagister">
+            <h2>Ragister</h2>
+            Name:<input type="text" name="txtName"><input type="button" class="btn-rg" id="btnRegister">
+        </form>
+    </div>
+    <div>
+        <form name="fomLogin">
+            <h2>Login</h2>
+            Name:<input type="email" name="txtEmail"><input type="button" class="btn-lg" id="btnLogin">
+        </form>
+    </div> -->
+    <fieldset>
+        <legend>Payment Method</legend>
+        <input type="radio" name="pay">Cash
+        <input type="radio" name="pay">Upi
+        <input type="radio" name="pay">Credit Card
+
+
+    </fieldset>
+</body>
+
+</html>

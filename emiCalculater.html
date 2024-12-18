@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>EMI Calculator</title> 
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">       -->
+    <style>
+        .form-element {
+            width: 100px;
+        }
+    </style>
+    <script>
+        function amountRange() {
+            const rangeValue = document.getElementById("amountRange").value;
+            document.getElementById("txtAmount").value = rangeValue;
+        }
+
+        function Calculateclick() {
+            var principal = parseFloat(document.getElementById("txtAmount").value);
+            var rate = parseFloat(document.getElementById("txtIntrest").value);
+            var time = parseFloat(document.getElementById("txtYears").value);
+            
+            // Calculate EMI
+            if (principal > 0 && rate > 0 && time > 0) {
+                var emi = (principal * rate / 100 / 12) / (1 - Math.pow(1 + (rate / 100 / 12), -time * 12));
+                alert("Your EMI is(pear Month): " + emi.toFixed(2));
+            } else {
+                alert("Please enter valid values for amount, interest rate, and time.");
+            }
+        }
+
+        function UpdateAmount() {
+            const amount = document.getElementById("txtAmount").value;
+            document.getElementById("amountRange").value = amount;
+        }
+
+        function UpdateYears() {
+            const years = document.getElementById("yearRange").value;
+            document.getElementById("txtYears").value = years;
+        }
+
+        function UpdateInterest() {
+            const interest = document.getElementById("IntrestRange").value;
+            document.getElementById("txtIntrest").value = interest;
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div>
+        <h2>EMI Calculator</h2>
+        <div class="row">
+            <div class="col-4">
+                <div class="input-group">
+                    Amount You Need: <span class="input-group-text">&#8377;</span>
+                    <input type="text" id="txtAmount" class="form-element" onchange="UpdateAmount()">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group">
+                    For <input type="text" id="txtYears" class="form-element" onchange="UpdateYears()"> Years
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group">
+                    Interest rate: <input type="text" id="txtIntrest" class="form-element" onchange="UpdateInterest()">%
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                50,000 <input type="range" id="amountRange" min="50000" max="400000" value="50000" onchange="amountRange()"> 4,00,000
+            </div>
+            <div class="col">
+                1 <input type="range" id="yearRange" min="1" max="5" value="1" onchange="UpdateYears()"> 5
+            </div>
+            <div class="col">
+                10.5% <input type="range" id="IntrestRange" min="1" max="21" step="0.5" value="10.5" onchange="UpdateInterest()"> 21%
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" onclick="Calculateclick()">Calculate</button>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>

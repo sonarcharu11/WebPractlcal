@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchDemo</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        meter{
+            height: 30px;
+        }
+    </style>
+    <script>
+        function veryifypwd(){
+            var pwd=document.getElementById("txtpwd").value;
+            
+            var regexp=/(?=.*[A-Z])\w{4,15}/; 
+
+                var msg= document.getElementById("msg");
+                var grade=document.getElementById("grade");
+
+                function showGrade(min,max,value,low,high){
+                    grade.min=min;
+                    grade.max=max;
+                    grade.value=value;
+                    grade.low=low;
+                    grade.high=high;
+                }
+
+                if(pwd=="")
+                {
+                    msg.innerHTML="Password is Required";
+                    msg.className="text-danger";
+                }
+                else
+                {
+                    if(pwd.match(regexp))
+                    {
+                        msg.innerHTML="String Password"
+                        msg.className="text-success";
+                        showGrade(1,100,100,0,0);
+                    }
+                    else
+                    {
+                        if(pwd.length<4)
+                        {
+                            msg.innerHTML="poor Password"
+                            msg.className="text-danger";
+                            showGrade(1,100,100,60,80);
+                        }
+                        else
+                        {           
+                            msg.innerHTML="Week Password"
+                            msg.className="text-warning";
+                            showGrade(1,100,70,40,80);
+                        }
+                    }
+                }
+            }  
+        
+    </script>
+</head>
+<body class="container-fluid">
+
+    <h2>Verifyed Password</h2>
+    <input type="password" onkeyup="veryifypwd()" id="txtpwd" class="form-control">
+    <div id="msg"></div>
+    <div>
+        <meter id="grade" min="1" max="100" class="w-100"></meter>
+    </div>
+</body>
+</html>

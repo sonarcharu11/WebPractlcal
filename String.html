@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sting</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap//dist/css/bootstrap.css">
+    <style>
+        .form{
+            border: 2px solid black;
+            padding: 20px;
+            width: 300px;
+            margin-left: 100px;
+            border-radius: 10px;
+        }
+        .dark-theme{
+            background-color: black;
+            color: white;
+
+        }
+        .light-Theme{
+            background-color: white;
+        }
+    </style>
+    <script>
+         function ChangeTheme() {
+            var themeCheckBox = document.getElementById("theme");
+            var formContainer = document.getElementById("formContainer");
+            if (themeCheckBox.checked) {
+                formContainer.className = "form dark-theme";
+                document.querySelector("button").className="btn btn-dark w-100"
+
+            } else {
+                formContainer.className = "form light-theme";
+                document.querySelector("button").className="btn btn-primary w-100"
+
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="form light-theme" id="formContainer">
+        <div class="form-switch">
+            <input type="checkbox" id="theme" onchange="ChangeTheme()" class="form-check-input"> Dark Theme
+        </div>
+        <dl>
+            <dt>Username</dt>
+            <dd><input type="text"></dd>
+            <dt>Password</dt>
+            <dd><input type="password"></dd>
+            <dt>Email</dt>
+            <dd><input type="email"></dd>
+        </dl>
+        <button class="btn btn-primary w-100">Login</button>
+    </div>
+</body>
+</html>
