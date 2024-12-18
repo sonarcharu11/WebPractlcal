@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+           background-color: rgb(237, 229, 225);
+           
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+           
+            display: flex;
+            margin-top: 100px;
+            margin-left: 30px;
+
+        }
+
+        .card {
+            width: 200px;
+            padding: 5px;
+            margin: 10px;
+            border: 2px solid rgb(247, 243, 243);
+            border-radius: 5px;
+            margin-left: 20px;
+            
+            
+        }
+
+        .card-header img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .card-header {
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .card-body {
+            height: 200px;
+        }
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .rating {
+            color: gold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .card-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .card-button button {
+            width: calc(56%);
+            height: 40px;
+            font-size: 16px;
+            margin-left: -10px;
+            margin-right: -10px;
+            border-radius: 5px;
+            margin-bottom: -8px;
+
+        }
+
+        .enroll {
+            background-color: aqua;
+        }
+
+        .info span {
+            display: block;
+        }
+        header{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            
+        .nav{
+            display: flex;
+            justify-content:space-evenly;
+            margin: 5px;
+            padding: 10px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>Naresh iT</h1>
+        </div>
+        <div class="serch-bar"></div>
+        <nav>
+            <ul class="nav">
+                <li>ALL CORCES</li>
+                <li>SERVIC</li>
+                <li>TRAINNING</li>
+                <li>ABOUT</li>
+                <li>CONTACT</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <img src="./images/aws.mobile_image" alt="AWS">
+            </div>
+            <div class="card-body">
+                <div class="title">Multi Cloud</div>
+                <div class="rating">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                </div>
+                <div class="info">
+                    <span class="bi bi-clock" id="data"> Start Date : 15 May 2024</span>
+                    <span class="bi bi-person" id="data"> by : Mr.Santosh</span>
+                    <span class="bi bi-clock" id="data"> Duration : 5 Months</span>
+                </div>
+            </div>
+            <div class="card-button">
+                <button class="enroll">ENROLL</button>
+                <button class="share">SHARE</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+
+                <img src="./images/java full stack.mobile_image" alt="">
+
+            </div>
+
+            <div class="card-body">
+                <div class="title">java Full stack Devlopment</div>
+                <div class="rating">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                </div>
+
+                <div class="info">
+                    <span class="bi bi-clock"> Start Date : 15 May 2024</span><br>
+                    <span class="bi bi-person"> by : Mr.Hari krishnna Sir</span><br>
+                    <span class="bi bi-clock"> Dur : 5 Manths</span><br>
+                </div>
+            </div>
+            <div class="card-button">
+                <button class="enroll">ENROLL</button>
+                <button class="">SHARE</button>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+
+                <img src="./images/web.mobile_image" alt="">
+
+            </div>
+
+            <div class="card-body">
+                <div class="title">full stack web with React</div>
+                <div class="rating">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                </div>
+
+                <div class="info">
+                    <span class="bi bi-clock"> Start Date : 15 May 2024</span><br>
+                    <span class="bi bi-person"> by : Mr.Santosh</span><br>
+                    <span class="bi bi-clock"> Dur : 5 Manths</span><br>
+                </div>
+            </div>
+            <div class="card-button">
+                <button class="enroll">ENROLL</button>
+                <button class="">SHARE</button>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+
+                <img src="./images/data-Science.mobile_image" alt="">
+
+            </div>
+
+            <div class="card-body">
+                <div class="title">Data-Science</div>
+                <div class="rating">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                </div>
+
+                <div class="info">
+                    <span class="bi bi-clock"> Start Date : 15 May 2024</span><br>
+                    <span class="bi bi-person"> by : Mr.Santosh</span><br>
+                    <span class="bi bi-clock"> Dur : 5 Manths</span><br>
+                </div>
+            </div>
+            <div class="card-button">
+                <button class="enroll">ENROLL</button>
+                <button class="">SHARE</button>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+
+                <img src="./images/react js.mobile_image" alt="">
+
+            </div>
+
+            <div class="card-body">
+                <div class="title">Ract JS</div>
+                <div class="rating">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                </div>
+
+                <div class="info">
+                    <span class="bi bi-clock"> Start Date : 15 May 2024</span><br>
+                    <span class="bi bi-person"> by : Mr.Santosh</span><br>
+                    <span class="bi bi-clock"> Dur : 8 Manths</span><br>
+                </div>
+            </div>
+            <div class="card-button">
+                <button class="enroll">ENROLL</button>
+                <button class="">SHARE</button>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="./images/react js.mobile_image" alt="">
+            </div>
+        <div class="card-body">
+            <div class="title">.Net</div>
+            <div class="rating">
+                <span class="bi bi-star-fill"></span>
+                <span class="bi bi-star-fill"></span>
+                <span class="bi bi-star-fill"></span>
+                <span class="bi bi-star-fill"></span>
+                <span class="bi bi-star-fill"></span>
+            </div>
+
+            <div class="info">
+                <span class="bi bi-clock"> Start Date : 15 May 2024</span><br>
+                <span class="bi bi-person"> by : Mr.prakash</span><br>
+                <span class="bi bi-clock"> Dur : 6 Manths</span><br>
+            </div>
+        </div>
+        <div class="card-button">
+            <button class="enroll">ENROLL</button>
+            <button class="">SHARE</button>
+        </div>
+
+    </div>
+    </main>
+</body>
+
+</html>

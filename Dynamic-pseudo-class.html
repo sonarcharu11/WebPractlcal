@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* dynamic pseudo choice for link(a) tag 1: a:link 2: a:visited 3: a:active*/
+        
+        a:link{
+            text-decoration: none;
+            color: green;
+        }
+        a:visited{
+            color: gray;
+           
+        }
+        a:active{
+            color: red;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            transition: 2s;
+        }
+        img:hover{
+            width: 150px;
+            height: 150px;
+            transition: 2s;
+            border-radius: 10px;
+        }
+        #username:read-only{
+            background-color: gainsboro;
+          
+        }
+       button:enabled{
+        background-color: green;
+        color: aliceblue;
+        cursor: grab;
+       }
+       button:disabled{
+        background-color: rgb(202, 161, 111);
+        color: aliceblue;
+        cursor: not-allowed;
+       }
+       #terms:checked+span{
+            color: green;
+       }
+       #terms+span{
+        color: rgb(193, 106, 106);
+       }
+       #username+span{
+            display: none;
+       }
+       #username:focus+span{
+        display: inline;
+       }
+       #username:focus{
+        border: 2px solid red;
+        box-shadow: 2px 2px 2px red;
+       }
+
+       #age:in-range{
+        border: 2px solid green;
+        box-shadow: 2px 2px 2px green;
+       }
+       #age:out-of-range{
+        border: 2px solid rgb(246, 22, 60);
+        box-shadow: 2px 2px 2px rgb(231, 19, 68);
+       }
+       #age:in-range+span{
+        display: none;
+       }
+       #age:out-of-range+span{
+        display: inline;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <p> 1.dynamic pseudo choice</p>
+    <img src="./images/netflix.webp" alt="">
+    <br>
+    <a href="./images/Pooja Hegde.jpg">Pooja</a> <br>
+    <a href="./amazon-footer.amazon">Amazon</a></div>
+
+    <div>
+        <p> 2.dynamic Element state pseudo choice</p>
+        <label for="">enter a name</label>
+        <input type="text" id="username" value="charu" >
+        <button disabled>Regiter</button>
+    </div>
+    <br><br>
+    <fieldset>
+        <legend>terms and conditions</legend>
+        <h4>terms of service</h4>
+        <input type="checkbox" id="terms"><span>I Accsept</span>
+    </fieldset>
+    <div>
+        <p>focus</p>
+        <label for="">Nmane</label>
+        <input type="text" id="username" placeholder="enter a name block letter">
+        <span>enter a name only block letter.</span>
+    </div>
+
+    <h1>dynamic Element validation state pseudo class</h1>
+    <div>
+        <p>in-rage and out-of-renge</p>
+        <label for="">age</label>
+        <input type="number" id="age" value="18" min="18" max="50">
+        <span>age is not valide</span>
+    </div>
+</body>
+</html>

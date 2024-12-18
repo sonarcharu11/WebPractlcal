@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            display: flex;
+        }
+        .topic{
+            height: 400px;
+            width: 300px;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        .topic:target{
+            background-color: black;
+            color: rgb(155, 200, 95);
+            border-radius: 50%;
+        }
+        ul{
+            display: flex;
+            justify-content:space-evenly;
+            list-style: none;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;       
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <ul>
+       <li><a href="#html">HTML</a></li>
+       <li><a href="#css">CSS</a></li>
+       <li><a href="#js">JS</a></li>
+       
+
+    </ul>
+    <main>
+        <div class="topic" id="html">
+            <h1>HTML</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque rem consequatur hic ea excepturi, id libero quam veritatis tempore voluptate reprehenderit molestiae consectetur repudiandae assumenda dignissimos officiis dolor nostrum sequi?</p>
+        </div>
+        <div class="topic" id="css">
+            <h1>CSS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque rem consequatur hic ea excepturi, id libero quam veritatis tempore voluptate reprehenderit molestiae consectetur repudiandae assumenda dignissimos officiis dolor nostrum sequi?</p>
+        </div>
+        <div class="topic" id="js">
+            <h1>JS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque rem consequatur hic ea excepturi, id libero quam veritatis tempore voluptate reprehenderit molestiae consectetur repudiandae assumenda dignissimos officiis dolor nostrum sequi?</p>
+        </div>
+    </main>
+   </header>
+</body>
+</html>

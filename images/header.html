@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .brand{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        header{
+         font-size: 20px;
+           padding: 20px; 
+           display: flex; 
+           justify-content: space-around;
+           font-family: Arial;
+           background-color: rgb(253, 251, 251);
+        }
+        nav span{
+            margin-right: 20px;
+        }
+        .shortcut-buttons span{
+            margin-right: 20px;
+        }
+        article{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        .bi-lightning-fill{
+            color: gold;
+        }
+        section{
+            height: 480px;
+        }
+        footer{
+            background-color: black;
+            color: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;        
+        }
+        .footer-title{
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: Arial;
+        }
+        .footer-brand-title{
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial;
+            margin-bottom: 20px;
+        }
+        .footer-title~span{
+            display:block;
+            margin-bottom: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        address span{
+            display:block;
+            margin-bottom: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .footer-brand-title~div span{
+            margin-right: 10px;
+            font-size: 20px;
+        }
+            
+        
+    </style>
+</head>
+<body>
+   <header>
+   <div> <span class="brand">shopper</span>
+   </div>
+
+    <nav>
+        <span>Home</span>
+        <span>Catal</span>
+        <span>Shop</span>
+        <span>Pages</span>
+        <span>Docs</span>
+    </nav>
+
+    <div class="shortcut-buttons">
+        <span class="bi bi-search"></span>
+        <span class="bi bi-person"></span>
+        <span class="bi bi-heart"></span>
+        <span class="bi bi-cart4"></span>
+    </div>
+   </header>
+   <article>
+        <span class="bi bi-lightning-fill"></span>
+        <span>HAPPY HOLIDAY DEALS ON EVERITHING</span>
+        <span class="bi bi-lightning-fill"></span>
+   </article>
+   <section></section>
+   <footer>
+        <div>
+            <div class="footer-brand-title"> shopper</div>
+            <div>
+                <span class="bi bi-facebook"></span>
+                <span class="bi bi-youtube"></span>
+                <span class="bi bi-twitter"></span>
+                <span class="bi bi-instagram"></span>
+            </div>
+        </div>
+
+        <div >
+            <div class="footer-title"> SUPPORT</div>
+           <span>contact</span>
+           <span>FAQs</span>
+           <span>Size Guide</span>
+           <span>Shipping & Returns</span>
+        </div>
+
+        <div>
+            <div class="footer-title">SHOP</div>
+            <span> Men's Shopping</span>
+            <span>Women's Shopping</span>
+            <span>Kid's Shopping</span>
+            <span>Discount</span>
+        </div>
+
+        <div>
+            <div class="footer-title">COMPANY</div>
+            <span>Our story</span>
+            <span>Careers</span>
+            <span>Term & conditions</span>
+            <span>Privacy & Cookis policy</span>
+        </div>
+
+        <div>
+            <div class="footer-title">CONTACT</div>
+            <address>
+                <span>1-202-555-0105</span>
+                <span>1-202-555-0105</span>
+                <span>help@shopper.com</span>
+            </address>
+        </div>
+   </footer>
+</body>
+</html>
